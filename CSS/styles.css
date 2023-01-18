@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* cambiamos la etiqueta raiz, y ahora se cuenta de 10px en 10px. */
+}
+
+.resume {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    background-color: #E8E8E8;
+    max-width: 1000px;
+    min-height: 100px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: repeat(5, 1fr);
+    box-shadow: 0 35px 55px black;
+    z-index: -1;
+    margin: 6em 0;
+    z-index: 100;
+}
+
+.cv-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-top: 1em;
+    text-align: center;
+    grid-area: 1/1/2/3;
+    text-transform: uppercase;
+}
+
+.cv-foto {
+    width: 21.5em;
+    height: 21.5em;
+    border-radius: 50%;
+    margin: 0.5em 0 0.5em 1em;
+    border-color: #272727;
+    border-style: solid;
+    z-index: 9999;
+}
+
+.cv-foto-border {
+    position: relative;
+    width: 22.5em;
+    height: 22.5em;
+    background-color: #272727;
+    border-radius: 50%;
+    z-index: 9998;
+}
+
+.cv-datosPrincipales {
+    position: relative;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.cv-datosPrincipales-nombre {
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    color: rgb(126, 18, 154);
+
+}
+
+.cv-datosPrincipales-nombre a:active,
+a:visited,
+a:link {
+    color: rgb(126, 18, 154);
+    text-decoration: none;
+}
+
+.cv-datosPrincipales-titulo {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #272727;
+}
+
+.datosCV-left,
+.datosCV-right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 4em;
+}
+
+.datosCV-left {
+    grid-area: 2/1/6/2;
+}
+
+.datosCV-left-contacto div ul .correoElectronico {
+    text-decoration: underline blueviolet;
+}
+
+.datosCV-right {
+    grid-area: 2/2/6/3;
+}
+
+.posicion {
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    color: rgb(126, 18, 154);
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.detalle {
+    color: #272727;
+    font-size: 14px;
+    line-height: 1.4em;
+    text-align: left;
+}
+
+.cloud-topLeft {
+    width: 45%;
+    height: 250px;
+    background: rgb(126, 18, 154);
+    background: linear-gradient(315deg, rgba(126, 18, 154, 1) 48%, rgba(175, 153, 112, 1) 82%);
+    border-radius: 0px 100px 100px 0;
+    position: absolute;
+    top: -75px;
+    z-index: 1;
+}
+
+.cloud-topLeft:after,
+.cloud-topLeft:before {
+    content: "";
+    position: absolute;
+    background: rgb(126, 18, 154);
+    background: linear-gradient(315deg, rgba(126, 18, 154, 1) 48%, rgba(175, 153, 112, 1) 82%);
+
+}
+
+.cloud-topLeft:after {
+    width: 300px;
+    height: 300px;
+    left: 40%;
+    top: -10px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.cloud-topLeft:before {
+    width: 200px;
+    height: 200px;
+    top: 150px;
+    left: -75px;
+    border-radius: 0 0 100% 40%;
+    z-index: -1;
+}
+
+.contactoViaMail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+    display: none;
+}
+
+.correoElectronico {
+    text-decoration: underline blueviolet;
+}
+
+.closeButton {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.closeButton span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #ffffff;
+}
+
+.closeButton span:nth-child(2) {
+    transform: rotate(315deg) translate(-8px, 5px);
+}
+
+.myWeb {
+    background-image: url("../Multimedia/peakpx\ \(1\).jpg");
+}
+
+.main-header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(84, 60, 91, 0.542);
+    padding: 0 0.4em;
+}
+
+.main-logo {
+    color: rgb(83, 62, 95);
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin-left: -100%;
+    transition: all 0.2s linear;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.main-nav.show {
+    margin-left: 0;
+}
+
+.nav-links {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.link-item {
+    margin-top: 2em;
+    color: #444444;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+.link-item::after {
+    position: absolute;
+    content: "";
+    background-color: black;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    transition: 0.3s ease all;
+}
+
+.link-item:hover::after {
+    width: 100%;
+}
+
+.button-menu {
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button-menu span {
+    width: 37px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #0dc34f;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+    transition: all 0.2s linear;
+}
+
+.button-menu.close span {
+    opacity: 1;
+    transform: rotate(45deg) translate(0px, 0px);
+    background: #ffffff;
+}
+
+.button-menu.close span:nth-child(2) {
+    transform: rotate(-45deg) translate(-8px, 5px);
+}
+
+.button-menu.close span:nth-child(3) {
+    display: none;
+}
+
+
+
+/*INDEX only*/
+.parallax {
+    margin: 0 auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30em;
+    max-width: 100%;
+    position: relative;
+}
+
+.parallax__titulo {
+    color: purple;
+    text-emphasis-color: white;
+    font-size: 5em;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    font-family: "Lily Script One", cursive;
+    font-weight: 800;
+    text-shadow: 0px 0.5em 0.5em whitesmoke;
+}
+
+.parallax__texto {
+    background-color: #0909091d;
+    padding: 4% 8%;
+    width: auto;
+}
+
+.parallax__texto p {
+    text-indent: 2em;
+    font-size: 1.4em;
+    margin: 2.5em;
+    color: silver;
+}
+
+/*Creamos el bucle para usar los valores del mapa*/
+.img-uno {
+    background-image: url("../multimedia/professional-woman.jpg");
+}
+
+.img-dos {
+    background-image: url("../multimedia/Bkg_Code.jpg");
+}
+
+.img-tres {
+    background-image: url("../multimedia/skills.jpg");
+}
+
+.img-cuatro {
+    background-image: url("../multimedia/student-holding-out-diploma-by-wall.jpg");
+}
+
+.work-info {
+    color: rgb(114, 80, 114);
+    list-style: none;
+    font-size: 1.2em;
+    margin: 0 0 2em 0;
+}
+
+.work-position {
+    font-size: 2em;
+    color: silver;
+    text-shadow: 0px 0.3em 0.3em grey;
+}
+
+.key-responsabilities {
+    font-size: 1.4em;
+    margin: 2em;
+    color: silver;
+}
+
+.skills-main {
+    display: block;
+    align-content: center;
+    padding: 5%;
+    width: auto;
+    text-align: justify;
+    font-size: 1.4em;
+    margin: 2em;
+    color: silver;
+}
+
+.skills-languages {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    padding: 5%;
+    width: auto;
+    text-align: justify;
+    font-size: 1.4em;
+    margin: 2em;
+    color: silver;
+}
+
+.skills-languages {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 5%;
+    width: auto;
+    text-align: justify;
+    font-size: 1.4em;
+    margin: 2em;
+    color: silver;
+}
+
+h4 {
+    font-size: 1.7em;
+    color: fuchsia;
+}
+
+.nivel-lectura-1 {
+    font-weight: bold;
+    color: fuchsia;
+}
+
+.nivel-lectura-2 {
+    font-weight: bold;
+    color: purple;
+}
+
+
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #000000;
+    size-adjust: 100%;
+    color: #b7b694;
+    padding: 1.5em;
+    width: auto;
+}
+
+footer div p {
+    font-size: 2em;
+}
+
+.siguenos {
+    width: auto;
+}
+
+.followUs {
+    text-align: center;
+}
+
+.social-Network ul {
+    display: inline-block;
+}
+
+.social-Network ul li a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-Network ul li a:hover {
+    background-color: black;
+}
+
+.creadoPor {
+    width: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .button-menu {
+        display: none;
+    }
+
+    .main-logo {
+        flex-basis: 30%;
+    }
+
+    .main-nav {
+        position: static;
+        margin-left: 0;
+        flex-basis: 70%;
+        height: 100%;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        background: white;
+    }
+
+    .link-item {
+        display: inline-block;
+        margin-top: 0;
+        margin-right: 2em;
+    }
+
+
+    .parallax {
+        overflow: hidden;
+        height: 20rem;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .parallax__titulo {
+        color: black;
+        font-size: 3rem;
+        font-style: bold;
+        text-shadow: 0px 0.2rem 0.5rem #0909091d;
+    }
+
+    .parallax__texto {
+        padding: 5%;
+    }
+
+    .parallax__texto p {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+}
+
+@media screen and (max-width: 615px) {}
+
+@media screen and (max-width: 500px) {}
