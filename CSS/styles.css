@@ -78,7 +78,7 @@ html {
     font-weight: 800;
     font-size: 4em;
     color: rgb(126, 18, 154);
-
+text-shadow: 0 0 #E8E8E8;
 }
 
 .cv-datosPrincipales-nombre a:active,
@@ -135,6 +135,13 @@ a:link {
     text-decoration: underline rgb(126, 18, 154);
 }
 
+.updated-date {
+    color: #E8E8E8;
+    font-size: 2em;
+    text-align: right;
+    text-indent: 0.5em;
+}
+
 .datosCV-left-idiomas .detalle ul {
     margin: 0 3em;
     justify-content: center;
@@ -183,26 +190,79 @@ a:link {
 }
 
 .cloud-topLeft {
-    width: 119%;
-    height: 12%;
+    background-image: url(../Multimedia/esquina.png);
+    background-repeat: no-repeat;
+background-size: 100%;
+    transform: rotate(180deg);
+    position: absolute;
+    top: -10em;
+    left: -14em;
+    height: 40em;
+    width: 80em;
+    z-index: 0;
+}
+
+.cloud-bottomRight {
     background-image: url(../Multimedia/esquina.png);
     background-repeat: no-repeat;
     background-size: 104%;
-    transform: rotate(180deg);
     position: absolute;
-    top: -7em;
-    left: -4em;
+    bottom: -6em;
+    right: -4em;
+    width: 41em;
+    height: 25em;
     z-index: 0;
+    visibility: hidden;
+}
+
+.cv-footer {
+    color: #E8E8E8;
+    background-color: #272727;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dot-little,
+.dot-medium,
+.dot-large {
+    border-radius: 50%;
+    background-color: #af9970cf;
+    z-index: 0;
+    position: absolute;
+    visibility: hidden;
 }
 
 .dot-little {
     width: 5em;
     height: 5em;
-    top: 10em;
-    left: 50%;
-    border-radius: 50%;
-    background-color: #af9970;
+    top: 6em;
+    left: 45em;
+    background-color: #af9970cf;
+    z-index: 0;
+    position: absolute;
+}
+
+.dot-medium {
+    width: 8em;
+    height: 8em;
+    top: 15em;
+    right: 2em;
+    background-color: #6d6d6d;
     z-index: -1;
+    position: absolute;
+}
+
+.dot-large {
+    width: 12em;
+    height: 12em;
+    top: -4em;
+    right: -4em;
+    background-color: #272727;
+    z-index: 0;
     position: absolute;
 }
 
@@ -327,7 +387,8 @@ input[type=reset] {
     margin-bottom: 1.5em;
 }
 
-.divisorSeccion {
+.divisorSeccion,
+.divisorSeccion-skills {
     border: none;
     width: 100%;
     height: 35px;
@@ -337,7 +398,7 @@ input[type=reset] {
 }
 
 .contactMe {
-    color:#8c576f;
+    color: #8c576f;
     text-align: center;
     font-size: 3em;
     font-weight: 900;
@@ -578,22 +639,13 @@ h4 {
     color: purple;
 }
 
-
-footer {
+.cv-footer div {
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: row;
-    background-color: #000000;
-    size-adjust: 100%;
-    color: #b7b694;
-    padding: 1.5em;
-    width: auto;
-}
-
-footer div p {
-    font-size: 2em;
+    font-size: 0.2em;
+    display: flex;
+    flex-direction: row;
+    padding: 0 2em 2em 2em;
 }
 
 .siguenos {
@@ -632,7 +684,7 @@ footer div p {
     }
 
     .container {
-        width: 100%;
+        width: 80%;
         position: relative;
         background-color: #E8E8E8;
         max-width: 1000px;
@@ -653,7 +705,6 @@ footer div p {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-around;
-        margin-top: 6em;
         text-align: center;
         grid-area: 1/1/2/3;
         text-transform: uppercase;
@@ -742,28 +793,8 @@ footer div p {
         text-align: left;
     }
 
-    .cloud-topLeft {
-        width: 72%;
-        height: 23%;
-        background-image: url(../Multimedia/esquina.png);
-        background-repeat: no-repeat;
-        background-size: 79%;
-        transform: rotate(180deg);
-        position: absolute;
-        top: -10em;
-        left: -20em;
-    }
 
-    .dot-little {
-        width: 5em;
-        height: 5em;
-        top: 10em;
-        left: 50%;
-        border-radius: 50%;
-        background-color: #af9970;
-        z-index: -1;
-        position: absolute;
-    }
+
 
     .main-logo {
         flex-basis: 30%;
@@ -815,8 +846,36 @@ footer div p {
         font-weight: 800;
     }
 
+    .divisorSeccion-skills {
+        display: none;
+    }
+
+    .container {
+        margin: 6em;
+
+    }
+
+
+    .cloud-bottomRight,
+        .dot-little,
+        .dot-medium,
+        .dot-large {
+        visibility: visible;
+    }
+
 }
 
+@media screen and (min-width: 1200px) {
+    .cloud-topLeft {
+        background-size: 85%;
+        top: -23em;
+        left: -18em;
+        width: 81em;
+        height: 53em;
+        z-index: 0;
+    }
 
-
-@media screen and (min-width: 1100px) {}
+    .cv-header {
+        background: none;
+    }
+}
