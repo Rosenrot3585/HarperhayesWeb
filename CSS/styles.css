@@ -206,14 +206,20 @@ a:link {
     position: absolute;
 }
 
+.instruccionFormm {
+    color: #b7b694;
+    font-size: 1.5em;
+    margin: 1em 2em;
+}
+
 .contactoViaMail {
-position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
     transition: all 0.2s linear;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 200;
     visibility: hidden;
     padding: auto;
@@ -222,6 +228,54 @@ position: fixed;
     flex-direction: column;
     flex-wrap: nowrap;
     color: #ffffff;
+    overflow: auto;
+}
+
+.formularioDeContacto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style inputs, select elements and textareas */
+input,
+textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 2em;
+    box-sizing: border-box;
+    resize: vertical;
+    align-self: center;
+}
+
+textarea {
+    margin: 2em;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: medium;
+}
+
+/* Style the submit button */
+input[type=submit],
+input[type=reset] {
+    background-color: #8c576f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+input[type=reset] {
+    background-color: #af9970;
 }
 
 .correoElectronico {
@@ -239,6 +293,9 @@ position: fixed;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: -1px;
 }
 
 .closeButton span {
@@ -251,7 +308,7 @@ position: fixed;
     transition: all 0.2s linear;
     opacity: 1;
     transform: rotate(45deg) translate(0px, 0px);
-    background: #ffffff;
+    background: #af9970;
 }
 
 .closeButton span:nth-child(2) {
@@ -280,11 +337,11 @@ position: fixed;
 }
 
 .contactMe {
-    color: rgb(126, 18, 154);
+    color:#8c576f;
     text-align: center;
     font-size: 3em;
-    font-weight: bolder;
-    text-shadow: 0 7px 10px #8c576f;
+    font-weight: 900;
+    margin-top: 2em;
 }
 
 .myWeb {
@@ -706,64 +763,6 @@ footer div p {
         background-color: #af9970;
         z-index: -1;
         position: absolute;
-    }
-
-    .instruccionFormm {
-        color: #b7b694;
-        font-size: 3em;
-        margin: 3em 0;
-    }
-
-    .contactoViaMail {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        transition: all 0.2s linear;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 200;
-        visibility: hidden;
-        padding: 0 2em;
-        line-height: 1.5;
-    }
-
-    .correoElectronico {
-        text-decoration: underline blueviolet;
-    }
-
-    .closeButton {
-        z-index: 200;
-        width: 40px;
-        height: 40px;
-        border: none;
-        display: flex;
-        background: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
-
-    .closeButton span {
-        width: 37px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        border-radius: 3px;
-        transform-origin: 4px 0px;
-        transition: all 0.2s linear;
-        opacity: 1;
-        transform: rotate(45deg) translate(0px, 0px);
-        background: #ffffff;
-    }
-
-    .closeButton span:nth-child(2) {
-        transform: rotate(315deg) translate(-8px, 5px);
-    }
-
-    .button-menu {
-        display: none;
     }
 
     .main-logo {
