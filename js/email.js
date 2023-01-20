@@ -2,10 +2,10 @@
 
 const closeForm = document.getElementById("closeButton");
 closeForm.addEventListener("click", () => {
-    document.getElementById("contactoViaMail").style.display = "none";
+    document.getElementById("contactoViaMail").style.visibility = "hidden";
 });
 
 var submitEmail = document.getElementById("correoElectronico");
 submitEmail.addEventListener("click", () => {
-    document.getElementById("contactoViaMail").style.display = "block";
+    document.getElementById("contactoViaMail").style.visibility = "visible";
 });

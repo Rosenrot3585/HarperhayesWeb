@@ -13,9 +13,11 @@ html {
     font-family: 'Montserrat', sans-serif;
     background-color: #272727;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 .container {
@@ -23,61 +25,58 @@ html {
     position: relative;
     background-color: #E8E8E8;
     max-width: 1000px;
-    min-height: 100px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: repeat(5, 1fr);
+    display: flex;
     box-shadow: 0 35px 55px black;
-    z-index: -1;
     margin: 6em 0;
-    z-index: 100;
+    flex-direction: column;
 }
 
 .cv-header {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    margin-top: 1em;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    grid-area: 1/1/2/3;
     text-transform: uppercase;
+    background-color: #2727272e;
+    z-index: 1;
 }
 
 .cv-foto {
-    width: 21.5em;
-    height: 21.5em;
+    width: 13.5em;
+    height: 13.5em;
     border-radius: 50%;
-    margin: 0.5em 0 0.5em 1em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
     border-color: #272727;
     border-style: solid;
-    z-index: 9999;
 }
 
 .cv-foto-border {
     position: relative;
-    width: 22.5em;
-    height: 22.5em;
+    width: 14.5em;
+    height: 14.5em;
     background-color: #272727;
     border-radius: 50%;
-    z-index: 9998;
+    margin-top: 1em;
 }
 
 .cv-datosPrincipales {
     position: relative;
     display: flex;
-    justify-items: center;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-bottom: 1em;
 }
 
 .cv-datosPrincipales-nombre {
     font-family: 'Sofia Sans', sans-serif;
     font-weight: 800;
-    font-size: 64px;
+    font-size: 4em;
     color: rgb(126, 18, 154);
 
 }
@@ -92,38 +91,88 @@ a:link {
 .cv-datosPrincipales-titulo {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 2em;
     color: #272727;
 }
 
 .datosCV-left,
 .datosCV-right {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 4em;
+    margin: 2em;
 }
 
-.datosCV-left {
-    grid-area: 2/1/6/2;
-}
-
-.datosCV-left-contacto div ul .correoElectronico {
-    text-decoration: underline blueviolet;
+.datosCV-left section,
+.datosCV-right section {
+    text-align: center;
+    margin-top: 3em;
 }
 
 .datosCV-right {
-    grid-area: 2/2/6/3;
+    margin-top: -2em;
 }
 
-.posicion {
-    text-transform: uppercase;
+.datosCV-left p {
+    text-align: center;
+}
+
+
+.datosCV-left section div ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.detalle-contacto {
+    list-style: none;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.correoElectronico {
+    text-decoration: underline rgb(126, 18, 154);
+}
+
+.datosCV-left-idiomas .detalle ul {
+    margin: 0 3em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.datosCV-left-idiomas .detalle ul li {
+    margin: 0 2em;
+}
+
+.datosCV-left-skills .detalle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.datosCV-left-skills .detalle ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 1em;
 }
 
 .subtitulo {
     color: rgb(126, 18, 154);
-    font-size: 24px;
+    font-size: 2em;
     font-weight: bolder;
+    margin-bottom: 1em;
+}
+
+.empleo,
+.instituto {
+    font-style: italic;
+    font-weight: light;
+    margin-bottom: 0.5em;
+    font-size: 1em;
 }
 
 .detalle {
@@ -134,45 +183,31 @@ a:link {
 }
 
 .cloud-topLeft {
-    width: 45%;
-    height: 250px;
-    background: rgb(126, 18, 154);
-    background: linear-gradient(315deg, rgba(126, 18, 154, 1) 48%, rgba(175, 153, 112, 1) 82%);
-    border-radius: 0px 100px 100px 0;
+    width: 119%;
+    height: 12%;
+    background-image: url(../Multimedia/esquina.png);
+    background-repeat: no-repeat;
+    background-size: 104%;
+    transform: rotate(180deg);
     position: absolute;
-    top: -75px;
-    z-index: 1;
+    top: -7em;
+    left: -4em;
+    z-index: 0;
 }
 
-.cloud-topLeft:after,
-.cloud-topLeft:before {
-    content: "";
-    position: absolute;
-    background: rgb(126, 18, 154);
-    background: linear-gradient(315deg, rgba(126, 18, 154, 1) 48%, rgba(175, 153, 112, 1) 82%);
-
-}
-
-.cloud-topLeft:after {
-    width: 300px;
-    height: 300px;
-    left: 40%;
-    top: -10px;
+.dot-little {
+    width: 5em;
+    height: 5em;
+    top: 10em;
+    left: 50%;
     border-radius: 50%;
+    background-color: #af9970;
     z-index: -1;
-}
-
-.cloud-topLeft:before {
-    width: 200px;
-    height: 200px;
-    top: 150px;
-    left: -75px;
-    border-radius: 0 0 100% 40%;
-    z-index: -1;
+    position: absolute;
 }
 
 .contactoViaMail {
-    position: fixed;
+position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -180,7 +215,13 @@ a:link {
     transition: all 0.2s linear;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 200;
-    display: none;
+    visibility: hidden;
+    padding: auto;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #ffffff;
 }
 
 .correoElectronico {
@@ -215,6 +256,35 @@ a:link {
 
 .closeButton span:nth-child(2) {
     transform: rotate(315deg) translate(-8px, 5px);
+}
+
+.posicion,
+.grado {
+    color: #272727;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+}
+
+.puesto {
+    margin-bottom: 1.5em;
+}
+
+.divisorSeccion {
+    border: none;
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #272727;
+    box-shadow: 0 24px 20px -16px #333;
+    margin-top: -1em;
+}
+
+.contactMe {
+    color: rgb(126, 18, 154);
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+    text-shadow: 0 7px 10px #8c576f;
 }
 
 .myWeb {
@@ -425,7 +495,7 @@ a:link {
 
 .skills-languages {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
     padding: 5%;
@@ -495,6 +565,203 @@ footer div p {
 }
 
 @media screen and (min-width: 768px) {
+    .resume {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #272727;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        background-color: #E8E8E8;
+        max-width: 1000px;
+        min-height: 100px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: repeat(5, 1fr);
+        box-shadow: 0 35px 55px black;
+        z-index: -1;
+        margin: 6em 0;
+        z-index: 100;
+    }
+
+    .cv-header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        margin-top: 6em;
+        text-align: center;
+        grid-area: 1/1/2/3;
+        text-transform: uppercase;
+    }
+
+    .cv-foto {
+        width: 23.5em;
+        height: 23.5em;
+        border-radius: 50%;
+        margin: 0.5em 0 0.5em 1em;
+        border-color: #272727;
+        border-style: solid;
+        z-index: 9999;
+    }
+
+    .cv-foto-border {
+        position: relative;
+        width: 25em;
+        height: 25em;
+        background-color: #272727;
+        border-radius: 50%;
+        z-index: 9998;
+    }
+
+    .cv-datosPrincipales {
+        position: relative;
+        display: flex;
+        justify-items: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .cv-datosPrincipales-nombre {
+        font-family: 'Sofia Sans', sans-serif;
+        font-weight: 800;
+        font-size: 64px;
+        color: rgb(126, 18, 154);
+
+    }
+
+    .cv-datosPrincipales-nombre a:active,
+    a:visited,
+    a:link {
+        color: rgb(126, 18, 154);
+        text-decoration: none;
+    }
+
+    .cv-datosPrincipales-titulo {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 800;
+        font-size: 24px;
+        color: #272727;
+    }
+
+    .datosCV-left,
+    .datosCV-right {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 4em;
+    }
+
+    .datosCV-left {
+        grid-area: 2/1/6/2;
+    }
+
+    .datosCV-left-contacto div ul .correoElectronico {
+        text-decoration: underline blueviolet;
+    }
+
+    .datosCV-right {
+        grid-area: 2/2/6/3;
+    }
+
+    .subtitulo {
+        color: rgb(126, 18, 154);
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .detalle {
+        color: #272727;
+        font-size: 14px;
+        line-height: 1.4em;
+        text-align: left;
+    }
+
+    .cloud-topLeft {
+        width: 72%;
+        height: 23%;
+        background-image: url(../Multimedia/esquina.png);
+        background-repeat: no-repeat;
+        background-size: 79%;
+        transform: rotate(180deg);
+        position: absolute;
+        top: -10em;
+        left: -20em;
+    }
+
+    .dot-little {
+        width: 5em;
+        height: 5em;
+        top: 10em;
+        left: 50%;
+        border-radius: 50%;
+        background-color: #af9970;
+        z-index: -1;
+        position: absolute;
+    }
+
+    .instruccionFormm {
+        color: #b7b694;
+        font-size: 3em;
+        margin: 3em 0;
+    }
+
+    .contactoViaMail {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        transition: all 0.2s linear;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 200;
+        visibility: hidden;
+        padding: 0 2em;
+        line-height: 1.5;
+    }
+
+    .correoElectronico {
+        text-decoration: underline blueviolet;
+    }
+
+    .closeButton {
+        z-index: 200;
+        width: 40px;
+        height: 40px;
+        border: none;
+        display: flex;
+        background: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .closeButton span {
+        width: 37px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        border-radius: 3px;
+        transform-origin: 4px 0px;
+        transition: all 0.2s linear;
+        opacity: 1;
+        transform: rotate(45deg) translate(0px, 0px);
+        background: #ffffff;
+    }
+
+    .closeButton span:nth-child(2) {
+        transform: rotate(315deg) translate(-8px, 5px);
+    }
+
     .button-menu {
         display: none;
     }
@@ -551,6 +818,6 @@ footer div p {
 
 }
 
-@media screen and (max-width: 615px) {}
 
-@media screen and (max-width: 500px) {}
+
+@media screen and (min-width: 1100px) {}
